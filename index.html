@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#5B8FD9" />
+  <meta name="description" content="A birthday letter and little archive made for Nadd." />
+  <title>Happy Birthday, Nadd</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+
+<!-- Birthday loading / entry screen -->
+<div id="birthday-loader" class="birthday-loader" aria-label="Opening birthday page">
+  <div class="loader-inner">
+    <span class="loader-flower" aria-hidden="true">✿</span>
+    <p class="loader-name">NADD / 23</p>
+    <p class="loader-sub">something made for you.</p>
+    <button class="loader-enter" type="button">tap to enter <span>♡</span></button>
+    <div class="loader-line"><span></span></div>
+  </div>
+</div>
+<script data-loader-script="final">
+(function(){
+  function initLoader(){
+    const loader=document.getElementById("birthday-loader");
+    if(!loader) return;
+    document.documentElement.classList.add("loader-active");
+    document.body.classList.add("loader-active");
+    let done=false;
+    const enter=()=>{
+      if(done) return;
+      done=true;
+      if (window.startBirthdayMusic) window.startBirthdayMusic();
+      loader.classList.add("is-leaving");
+      document.body.classList.remove("loader-active");
+      document.documentElement.classList.remove("loader-active");
+      window.setTimeout(()=>loader.remove(),800);
+    };
+    const btn=loader.querySelector(".loader-enter");
+    if(btn) btn.addEventListener("click",enter);
+    window.addEventListener("keydown",function(e){ if(e.key==="Enter" || e.key===" "){ e.preventDefault(); enter(); } });
+    // Keep the loading screen interactive: music starts as the user enters.
+  }
+  if(document.readyState === "loading") document.addEventListener("DOMContentLoaded",initLoader,{once:true});
+  else initLoader();
+})();
+</script>
+
+  <header class="site-bar">
+    <a class="site-mark" href="#s00" aria-label="Back to beginning">NADD / 23</a>
+
+    <nav class="site-nav" aria-label="Page sections">
+      <a href="#s00" class="nav-link is-active" data-section="s00">HOME</a>
+      <a href="#s01" class="nav-link" data-section="s01">NADD</a>
+      <a href="#s02" class="nav-link" data-section="s02">LITTLE THINGS</a>
+      <a href="#s03" class="nav-link" data-section="s03">FIRSTS</a>
+      <a href="#s04" class="nav-link" data-section="s04">OUR PHOTOS</a>
+      <a href="#s05" class="nav-link" data-section="s05">9 YEARS</a>
+      <a href="#s06" class="nav-link" data-section="s06">WISHES</a>
+      <a href="#s07" class="nav-link" data-section="s07">LETTER</a>
+    <div class="nav-floral-ornaments" aria-hidden="true">
+  <span class="nav-flower flower-left">✿</span>
+  <span class="nav-heart heart-left">♡</span>
+  <span class="nav-heart heart-right">♡</span>
+  <span class="nav-flower flower-right">✿</span>
+</div>
+</nav>
+
+    <div class="site-bar__right">
+      <span class="progress-label" id="progressLabel">00</span>
+      <div class="music-player" id="musicPlayer" aria-live="polite">
+        <button class="music-player__bubble" id="musicToggle" type="button" aria-label="Play music" aria-pressed="false">
+          <span class="music-player__disc" aria-hidden="true">♪</span>
+          <span class="music-player__pulse" aria-hidden="true"></span>
+        </button>
+        <div class="music-player__info">
+          <span class="music-player__label">NOW PLAYING</span>
+          <span class="music-player__track">Live While We’re Young</span>
+          <span class="music-player__artist">One Direction</span>
+        </div>
+        <span class="music-player__state" aria-hidden="true">OFF</span>
+      </div>
+      <button class="nav-menu-toggle" id="navMenuToggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobileNav">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <div class="mobile-nav__inner">
+      <div class="mobile-nav__top"><span>NADD / 23</span><span>MENU</span></div>
+      <nav aria-label="Mobile page sections">
+        <a href="#s00" data-section="s00">00 / HOME</a>
+        <a href="#s01" data-section="s01">01 / NADD</a>
+        <a href="#s02" data-section="s02">02 / LITTLE THINGS</a>
+        <a href="#s03" data-section="s03">03 / FIRSTS</a>
+        <a href="#s04" data-section="s04">04 / OUR PHOTOS</a>
+        <a href="#s05" data-section="s05">05 / 9 YEARS</a>
+        <a href="#s06" data-section="s06">06 / WISHES</a>
+        <a href="#s07" data-section="s07">07 / LETTER</a>
+      </nav>
+    </div>
+  </div>
+
+  <main>
+    <!-- 00 — BIRTHDAY COVER -->
+    <section class="section section-cover theme-paper" id="s00" data-theme="paper">
+      <div class="container cover-grid">
+        <div class="cover-copy">
+          <p class="eyebrow reveal-up">for your 23rd</p>
+          <h1 class="display display--cover reveal-clip delay-1">
+            HAPPY<br><em>BIRTHDAY</em>
+          </h1>
+          <div class="cover-name reveal-up delay-2">
+            <span>for</span>
+            <strong>Nadd</strong>
+          </div>
+          <p class="cover-note reveal-up delay-3">23 looks good on you.</p>
+          <div class="birthday-age reveal-up delay-4"><strong>23</strong><span>your 23rd</span></div>
+        </div>
+
+        <figure class="media-frame media-frame--cover reveal-image">
+          <img class="real-photo real-photo--cover" src="assets/photos/nadd-01.jpeg" alt="Nadd — birthday cover" loading="lazy">
+          <figcaption>today is yours.</figcaption>
+        </figure>
+
+        <div class="cover-index reveal-up delay-3" aria-hidden="true">
+          <span>00</span>
+          <i></i>
+          <span>08</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 01 — NADD -->
+    <section class="section section-nadd theme-blue" id="s01" data-theme="blue">
+      <div class="container nadd-grid">
+        <div class="nadd-portrait reveal-image">
+          <div class="nadd-photo-wrap">
+            <img class="real-photo real-photo--nadd" src="assets/photos/nadd-04.jpeg" alt="Nadd portrait" loading="lazy">
+            <div class="nadd-love-animation" aria-hidden="true">
+              <span class="love love-1">♡</span>
+              <span class="love love-2">♡</span>
+              <span class="love love-3">♡</span>
+              <span class="love love-4">♡</span>
+              <span class="love love-5">♡</span>
+              <span class="flower flower-1">✿</span>
+              <span class="flower flower-2">✿</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="nadd-copy">
+          <p class="eyebrow eyebrow--light reveal-up">01 / NADD</p>
+          <h2 class="display display--nadd reveal-clip delay-1">
+            you don't<br />even have to<br /><em>smile.</em>
+          </h2>
+          <p class="nadd-sub reveal-up delay-2">but when you do... <em>you're even sweeter.</em></p>
+        </div>
+
+        <div class="nadd-side-note reveal-up delay-3">
+          <span>birthday girl</span>
+          <span>still very much you.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 — LITTLE THINGS -->
+    <section class="section section-little theme-paper" id="s02" data-theme="paper">
+      <div class="container">
+        <div class="section-head reveal-up">
+          <div>
+            <p class="eyebrow">02 / THE LITTLE THINGS</p>
+            <h2 class="section-title">the things that make you, you.</h2>
+          </div>
+          <p class="section-intro">small things. somehow, memorable.</p>
+        </div>
+
+        <div class="little-grid">
+          <article class="little-item little-item--wide reveal-up">
+            <span class="item-number">01</span>
+            <h3>kurang peka, tapi gengsi.</h3>
+            <p>kadang sebenarnya ngerti,<br>cuma gengsi buat ngaku.</p>
+          </article>
+
+          <article class="little-item little-item--note reveal-up delay-1">
+            <span class="item-number">02</span>
+            <h3>lucuuukk, ada manis-manisnya.</h3>
+            <p>nggak selalu sadar kalau dirinya lucu.<br>tapi ya... emang lucu.</p>
+          </article>
+
+          <article class="little-item little-item--blue reveal-up delay-2">
+            <span class="item-number">03</span>
+            <h3>pelupa wkwkwk.</h3>
+            <p>tapi gapapa sii.<br>yang penting nggak lupa aku.</p>
+          </article>
+
+          <article class="little-item reveal-up delay-1">
+            <span class="item-number">04</span>
+            <h3>kalau lagi cuek, cuek kali.</h3>
+            <p>bisa tiba-tiba jadi dingin.<br>yaudah, tunggu mood-nya balik aja.</p>
+          </article>
+
+          <article class="little-item little-item--offset reveal-up delay-2">
+            <span class="item-number">05</span>
+            <h3>petenteng kalau lagi mood.</h3>
+            <p>kalau lagi mood,<br>gaya kali dia.</p>
+          </article>
+
+          <div class="little-easter reveal-up delay-4" title="you know.">🧏🏻‍♂️</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 — THE FIRSTS -->
+    <section class="section section-firsts theme-deep" id="s03" data-theme="deep">
+      <div class="container">
+        <div class="chapter-intro">
+          <div class="chapter-intro__main">
+            <p class="eyebrow eyebrow--light reveal-up">03 / THE FIRSTS</p>
+            <h2 class="display display--chapter reveal-clip delay-1">before there was<br /><em>us.</em></h2>
+          </div>
+          <div class="chapter-intro__aside reveal-up delay-2">
+            <span class="chapter-intro__rule"></span>
+            <p class="chapter-intro__note">there were little beginnings.</p>
+          </div>
+        </div>
+
+        <article class="first first--call">
+          <div class="first-copy reveal-up">
+            <span class="first-number">01 /</span>
+            <h3>FIRST CALL</h3>
+            <p class="first-lead">it was supposed to be about your phone.</p>
+            <p>you lost it. I called. we talked about the phone for a little while — then somehow, the conversation went somewhere else.</p>
+          </div>
+          <figure class="first-media reveal-image">
+            <div class="photo-placeholder photo-placeholder--landscape photo-placeholder--dark" data-label="FIRST CALL">
+              <span>memory photo</span>
+            </div>
+          </figure>
+        </article>
+
+        <article class="first first--hangout">
+          <figure class="first-media reveal-image">
+            <div class="photo-placeholder photo-placeholder--landscape photo-placeholder--paper" data-label="HERO KUPI">
+              <span>Hero Kupi photo</span>
+            </div>
+          </figure>
+          <div class="first-copy reveal-up">
+            <span class="first-number">02 /</span>
+            <h3>FIRST HANGOUT</h3>
+            <p class="first-lead first-lead--blue">HERO KUPI</p>
+            <p>my favorite warkop.<br />and now, one of the places that belongs to a memory of us.</p>
+          </div>
+        </article>
+
+        <article class="first first--jog">
+          <div class="first-copy reveal-up">
+            <span class="first-number">03 /</span>
+            <h3>FIRST JOG</h3>
+            <p class="first-lead">fresh out of your thesis defense.</p>
+            <p>your friends had gone home.<br />you were bored.<br />so you asked me to jog.</p>
+          </div>
+          <figure class="first-media first-media--small reveal-image">
+            <div class="photo-placeholder photo-placeholder--square photo-placeholder--dark" data-label="FIRST JOG">
+              <span>memory photo</span>
+            </div>
+          </figure>
+        </article>
+      </div>
+    </section>
+
+    <!-- 04 — OUR PHOTOS -->
+    <section class="section section-photos theme-paper" id="s04" data-theme="paper">
+      <div class="container">
+        <div class="section-head section-head--photos reveal-up">
+          <div>
+            <p class="eyebrow">04 / OUR PHOTOS</p>
+            <h2 class="section-title">two moments.<br /><em>many frames.</em></h2>
+          </div>
+          <p class="section-intro">we didn't take photos every time we met.<br />just enough to remember these.</p>
+        </div>
+
+        <div class="photo-chapter photo-chapter--mosaic">
+          <div class="photo-chapter__head reveal-up">
+            <span class="chapter-label">MOMENT 01</span>
+            <span>one of those days.</span>
+          </div>
+          <div class="photo-mosaic" aria-label="Moment 01 photo gallery">
+            <figure class="gallery-item gallery-item--a reveal-image"><img class="real-photo real-photo--gallery" src="assets/photos/nadd-02.jpeg" alt="M01 photo 2" loading="lazy"></figure>
+            <figure class="gallery-item gallery-item--b reveal-image delay-1"><img class="real-photo real-photo--gallery" src="assets/photos/nadd-03.jpeg" alt="M01 photo 3" loading="lazy"></figure>
+            <figure class="gallery-item gallery-item--c reveal-image delay-2"><img class="real-photo real-photo--gallery" src="assets/photos/nadd-06.jpeg" alt="M01 photo 6" loading="lazy"></figure>
+            <figure class="gallery-item gallery-item--d reveal-image delay-3"><img class="real-photo real-photo--gallery" src="assets/photos/nadd-09.jpeg" alt="M01 photo 9" loading="lazy"></figure>
+            <figure class="gallery-item gallery-item--e reveal-image delay-4"><img class="real-photo real-photo--gallery" src="assets/photos/nadd-05.jpeg" alt="M01 photo 5" loading="lazy"></figure>
+          </div>
+        </div>
+
+        <div class="photo-chapter photo-chapter--second photo-chapter--mosaic">
+          <div class="photo-chapter__head reveal-up">
+            <span class="chapter-label">MOMENT 02</span>
+            <span>another one worth keeping.</span>
+          </div>
+          <div class="photo-mosaic photo-mosaic--second" aria-label="Moment 02 photo gallery">
+            <figure class="gallery-item gallery-item--a reveal-image"><img class="real-photo real-photo--gallery" src="assets/photos/nadd-07.jpeg" alt="M02 photo 7" loading="lazy"></figure>
+            <figure class="gallery-item gallery-item--b reveal-image delay-1"><img class="real-photo real-photo--gallery" src="assets/photos/nadd-08.jpeg" alt="M02 photo 8" loading="lazy"></figure>
+            <figure class="gallery-item gallery-item--c reveal-image delay-2"><img class="real-photo real-photo--gallery" src="assets/photos/nadd-10.jpeg" alt="M02 photo 10" loading="lazy"></figure>
+            <figure class="gallery-item gallery-item--d reveal-image delay-3"><img class="real-photo real-photo--gallery" src="assets/photos/nadd-11.jpeg" alt="M02 photo 11" loading="lazy"></figure>
+            <figure class="gallery-item gallery-item--e reveal-image delay-4"><img class="real-photo real-photo--gallery" src="assets/photos/nadd-01.jpeg" alt="M02 photo 1" loading="lazy"></figure>
+          </div>
+        </div>
+
+        <p class="photo-hint reveal-up">hover a frame · move across to see the colors</p>
+      </div>
+    </section>
+
+    <!-- 05 — ALMOST 9 YEARS -->
+    <section class="section section-years theme-blue-deep" id="s05" data-theme="blue-deep">
+      <div class="container years-grid">
+        <div class="years-lockup reveal-up" aria-label="Almost 9 years">
+          <p class="years-lockup__line">ALMOST <strong>9</strong></p>
+          <p class="years-lockup__line years-lockup__line--bottom">YEARS.</p>
+        </div>
+
+        <div class="years-story">
+          <p class="eyebrow eyebrow--light reveal-up">AND SOMEHOW, ALL THAT TIME</p>
+          <p class="years-line reveal-up delay-1">friends.<br>then best friends.<br><br>almost nine years later,<br>we've collected so many ordinary days<br>that somehow don't feel ordinary anymore.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 — WISHES -->
+    <section class="section section-wishes theme-light" id="s06" data-theme="light">
+      <div class="container">
+        <div class="wishes-head reveal-up">
+          <p class="eyebrow">06 / MY WISHES FOR YOU</p>
+          <h2 class="section-title">for your 23rd.</h2>
+        </div>
+
+        <div class="wishes-list">
+          <article class="wish reveal-up">
+            <span>01</span>
+            <p>I hope you keep finding reasons to laugh.</p>
+          </article>
+          <article class="wish reveal-up delay-1">
+            <span>02</span>
+            <p>I hope the things you've been working for find their way to you.</p>
+          </article>
+          <article class="wish reveal-up delay-2">
+            <span>03</span>
+            <p>I hope this new chapter is gentle with you.</p>
+          </article>
+          <article class="wish reveal-up delay-3">
+            <span>04</span>
+            <p>and most of all, I hope you know how loved you are.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 — LETTER -->
+    <section class="section section-letter theme-paper" id="s07" data-theme="paper">
+      <div class="container letter-layout">
+        <div class="letter-kicker reveal-up">
+          <p class="eyebrow">07 / THE LETTER</p>
+          <span>take your time.</span>
+        </div>
+
+        <article class="letter">
+          <p class="letter-greeting reveal-up">Nadd,</p>
+          <div class="letter-copy reveal-fade delay-1">
+            <p>almost nine years is a strange amount of time to put into words.</p>
+            <p>we started as friends, became best friends, and somehow collected all these small memories along the way — calls that were supposed to be about one thing, random plans, little places, and the kind of time together that never really needed a reason.</p>
+            <p>one thing I've always valued most is your time. maybe because I know how easy it is for life to get busy, and how much it means whenever you still choose to spend some of yours with me.</p>
+            <p>so on your birthday, I don't want to make this about what I expect from you. I just want you to know what I feel, honestly.</p>
+            <p class="letter-love">you mean more to me than I usually know how to say.</p>
+            <p>and I hope this new chapter brings you
+more things to be excited about,
+more reasons to laugh,
+and more days that feel like yours.</p>
+          </div>
+          <p class="letter-sign reveal-up delay-2">— Dil</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 08 — ENDING -->
+    <section class="section section-ending theme-blue" id="s08" data-theme="blue">
+      <div class="container ending-grid">
+        <figure class="ending-photo reveal-image">
+          <img class="real-photo real-photo--ending" src="assets/photos/nadd-01.jpeg" alt="Nadd and Dil" loading="lazy">
+        </figure>
+
+        <div class="ending-copy">
+          <p class="eyebrow eyebrow--light reveal-up">08 / END</p>
+          <h2 class="display display--ending reveal-clip delay-1">HAPPY<br />BIRTHDAY,<br /><em>NADD.</em></h2>
+          <p class="ending-note reveal-up delay-2">I hope this new chapter is kind to you.</p>
+          <p class="ending-sign reveal-up delay-3">— Dil</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <audio id="birthdayMusic" preload="auto" loop playsinline>
+    <source src="assets/music/birthday-song.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
